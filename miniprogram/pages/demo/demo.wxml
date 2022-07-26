@@ -1,0 +1,10 @@
+<view wx:if="{{condition}}">
+  <view hidden="{{condition}}">
+    this is demo page
+  </view>
+
+  <block wx:if="{{score > 60}}">及格</block>
+  <block wx:else>不及格</block>
+</view>
+<view wx:for="{{studentScores}}" wx:for-item='score' wx:key="index">{{index}}:{{score}}</view>
+<block wx:for="{{studentInfo}}" wx:key="id">{{index}}:{{item.name}}:{{item.score}}</block>

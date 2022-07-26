@@ -1,0 +1,71 @@
+<!-- 引入操作 -->
+<import src="/templates/listTemp.wxml" />
+
+<view class="container">
+  <!-- 滚动菜单 -->
+  <view class="search">
+    <scroll-view class="backgound-scroll" scroll-x>
+      <view class="nav">
+        <block wx:for="{{navigatorArr}}" wx:key="index">
+          <navigator url="">{{item}}</navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="abs">
+    <swiper class="for-tu" autoplay circular>
+      <swiper-item>
+        <image class="image" src="{{image1}}"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="image" src="{{image2}}"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="image" src="{{image3}}"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="image" src="{{image4}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 导航菜单 -->
+  <view class="outer-view">
+    <view class="inner-view" wx:for="{{navMenu}}" wx:key="index">
+      <navigator url="{{item.url}}">
+        <image src="/icon/{{item.img}}"></image>
+        <view class="inner-info">{{item.title}}</view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 动态 -->
+  <view>
+    <scroll-view scroll-x>
+      <view class="scroll-view">
+        <view wx:for="{{ navigatorScorll}}" wx:key="index" class="inner-view margin20">
+          <navigator url="{{item.url}}">
+            <image src="/icon/{{item.img}}"></image>
+            <view class="inner-info">{{item.title}}</view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 搜索栏 -->
+<view></view>
+
+<!-- 游戏列表 -->
+<view>
+  <template is="listTemp" data="{{gameLists}}"></template>
+</view>
+
+<!-- 广告 -->
+<image class="ad" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924141301AZ-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1660718784&t=e2b7fd53836e4b1c18e74f13a92ee37c"></image>
+
+<!-- 游戏列表2 -->
+<view>
+  <template is="listTemp" data="{{gameLists}}"></template>
+</view>
+<include src="/templates/footer.wxml" />
