@@ -1,0 +1,5 @@
+<view>
+<camera class="camera-cls" device-position="front" flash="off">
+
+</camera>
+</view>
